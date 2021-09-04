@@ -1,4 +1,7 @@
-import * from utils
+from utils import *
+import cv2
+#import matplotlib.pyplot as plt
+
 #predicting
 filepath="C:/Indoor Scene Recognition/"
 

@@ -1,6 +1,8 @@
 import random
-import * from utils
-import tensorflow as tf
+import numpy as np
+from utils import *
+from tensorflow.keras.callbacks import TensorBoard
+import keras
 from keras import models
 from keras.layers import Dense,Dropout,Activation,Flatten,Conv2D,MaxPooling2D
 #normalize data(scaling)
