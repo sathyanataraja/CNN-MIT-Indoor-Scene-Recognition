@@ -6,4 +6,6 @@ ModelBuildAndPrediction: Contains the neural network CNN with just one hidden la
 
 Details: 1 hidden layer. Epoch is set to 5 to reduce run time.The images in the input dataset also determines the run time for each Epoch.
 
+The Dataset needed can be fetched using the link below: 
+http://web.mit.edu/torralba/www/indoor.html
 """
