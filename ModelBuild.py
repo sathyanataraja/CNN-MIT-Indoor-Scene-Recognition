@@ -7,6 +7,14 @@ from keras import models
 from keras.layers import Dense,Dropout,Activation,Flatten,Conv2D,MaxPooling2D
 #normalize data(scaling)
 
+datadir = "C:\Indoor Scene Recognition\data_dir"
+
+categories = ["airport_inside","artstudio","auditorium","bakery","bar","bathroom","bedroom","bookstore","closet",
+              "dentaloffice","elevator","florist","garage","gym","hairsalon","hospitalroom","library","livingroom",
+              "mall","office","poolinside"]
+
+img_size = 100      # resize all the images to one size
+training_data=[]
 create_training_data()
 random.shuffle(training_data)
 X = []
