@@ -6,10 +6,6 @@ from skimage import util
 import numpy as np
 import os
 import cv2
-#import matplotlib.pyplot as plt
-import keras
-from tensorflow.keras.callbacks import TensorBoard
-import time
 
 def random_rotation(image_array: ndarray):
     # pick a random degree of rotation between 25% on the left and 25% on the right
