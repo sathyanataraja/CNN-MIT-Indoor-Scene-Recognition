@@ -5,10 +5,12 @@ from tensorflow.keras.callbacks import TensorBoard
 import keras
 from keras import models
 from keras.layers import Dense,Dropout,Activation,Flatten,Conv2D,MaxPooling2D
-#normalize data(scaling)
+import cv2
 
+#set location of the training data
 datadir = "C:\Indoor Scene Recognition\data_dir"
 
+#seperate the images data with categories in data_dir and list them here below
 categories = ["airport_inside","artstudio","auditorium","bakery","bar","bathroom","bedroom","bookstore","closet",
               "dentaloffice","elevator","florist","garage","gym","hairsalon","hospitalroom","library","livingroom",
               "mall","office","poolinside"]
@@ -54,3 +56,12 @@ for dense_layer in dense_layers:
             model.add(Dense(len(categories), activation='softmax'))   
             model.compile(optimizer='adam',loss='categorical_crossentropy',metrics=['accuracy'])
             model.fit(X, class_num, epochs=5, batch_size=32,validation_split=0.2,callbacks=[tensorboard])
+
+
+#predicting
+#Pass the test image or image for prediction below 
+img_array = cv2.imread("C:/Indoor Scene Recognition/airport_inside_0030.jpg",cv2.IMREAD_GRAYSCALE)
+new_array = cv2.resize(img_array, (100,100))
+new_array=new_array.reshape(-1,100,100,1)
+prediction = model.predict([new_array])
+print(categories[np.argmax(prediction)])
