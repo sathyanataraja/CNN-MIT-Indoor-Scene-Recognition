@@ -20,14 +20,6 @@ def horizontal_flip(image_array: ndarray):
     # horizontal flip doesn't need skimage, it's easy as flipping the image array of pixels !
     return image_array[:, ::-1]
     
-datadir = "C:\Indoor Scene Recognition\data_dir"
-
-categories = ["airport_inside","artstudio","auditorium","bakery","bar","bathroom","bedroom","bookstore","closet",
-              "dentaloffice","elevator","florist","garage","gym","hairsalon","hospitalroom","library","livingroom",
-              "mall","office","poolinside"]
-
-img_size = 100      # resize all the images to one size
-training_data=[]
 def create_training_data():
     for category in categories:
         path = os.path.join(datadir, category) # path to categories
