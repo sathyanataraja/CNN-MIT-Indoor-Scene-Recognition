@@ -20,7 +20,7 @@ def horizontal_flip(image_array: ndarray):
     # horizontal flip doesn't need skimage, it's easy as flipping the image array of pixels !
     return image_array[:, ::-1]
     
-def create_training_data():
+def create_training_data(categories,datadir,img_size,training_data):
     for category in categories:
         path = os.path.join(datadir, category) # path to categories
         class_num = categories.index(category) 

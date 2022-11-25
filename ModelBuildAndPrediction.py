@@ -6,6 +6,7 @@ import keras
 from keras import models
 from keras.layers import Dense,Dropout,Activation,Flatten,Conv2D,MaxPooling2D
 import cv2
+import time
 
 #set location of the training data
 datadir = "C:\Indoor Scene Recognition\Images_test"
@@ -15,7 +16,7 @@ categories = ["airport_inside","artstudio","auditorium","bakery","bar","bathroom
 
 img_size = 100      # resize all the images to one size
 training_data=[]
-create_training_data()
+create_training_data(categories,datadir,img_size,training_data)
 random.shuffle(training_data)
 X = []
 y = []
