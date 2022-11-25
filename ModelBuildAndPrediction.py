@@ -61,7 +61,7 @@ for dense_layer in dense_layers:
 #predicting
 #Pass the test image or image for prediction below 
 print('executing prediction')
-img_array = cv2.imread("C:\Indoor Scene Recognition\bar_test_image.jpg",cv2.IMREAD_GRAYSCALE)
+img_array = cv2.imread("C:/Indoor Scene Recognition/Images_test/test/bar_test_image.jpg",cv2.IMREAD_GRAYSCALE)
 new_array = cv2.resize(img_array, (100,100))
 new_array=new_array.reshape(-1,100,100,1)
 prediction = model.predict([new_array])
