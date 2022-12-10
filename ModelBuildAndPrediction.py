@@ -55,7 +55,7 @@ for dense_layer in dense_layers:
             model.add(Dense(len(categories), activation='softmax'))   
             model.compile(optimizer='adam',loss='categorical_crossentropy',metrics=['accuracy'])
             model.fit(X, class_num, epochs=5, batch_size=32,validation_split=0.2,callbacks=[tensorboard])
-            print('model fir complete')
+            print('model fit complete')
 
 
 #predicting
